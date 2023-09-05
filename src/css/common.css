@@ -16,8 +16,7 @@ img {
   display: block;
   max-width: 100%;
 }
-
-button[data-start], button[data-stop] {
+.button-start-centered, .button-stop-centered {
   width: 100px;
   height: 50px;
   position: fixed;
@@ -25,10 +24,10 @@ button[data-start], button[data-stop] {
   top: 50%
 }
 
-button[data-stop] {
+.button-stop-centered {
   right: calc(50% - 110px);
 }
-button[data-start] {
+.button-start-centered {
   left: calc(50% - 110px);
 }
 
