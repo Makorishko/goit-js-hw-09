@@ -13,7 +13,7 @@ const btn = document.querySelector('button[data-start]');
 const selector = document.querySelector('#datetime-picker');
 let timeId = null;
 let selectedDate;
-
+btn.setAttribute('disabled', '');
 console.log(flatpickr);
 const options = {
   enableTime: true,
@@ -23,7 +23,7 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < new Date()) {
       Notiflix.Notify.warning('Please choose a date in the future !');
-      btn.setAttribute('disabled', '');
+    
     }
     if (selectedDates[0] >= new Date()) {
         btn.removeAttribute('disabled', '');
@@ -44,8 +44,11 @@ btn.addEventListener(
       elements.days.textContent = addLeadingZero(convertMs(ms).days);
       elements.hours.textContent = addLeadingZero(convertMs(ms).hours);
       elements.minutes.textContent = addLeadingZero(convertMs(ms).minutes);
-      elements.seconds.textContent = addLeadingZero(convertMs(ms).seconds);
-      if (ms < 0) {
+        elements.seconds.textContent = addLeadingZero(convertMs(ms).seconds);
+        
+        console.log(ms)
+
+      if (ms <= 1000) {
         clearInterval(timeId);
       }
     });
