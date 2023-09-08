@@ -39,6 +39,7 @@ btn.addEventListener(
   'click',
   () => {
     timeId = setInterval(() => {
+      btn.setAttribute('disabled', '');
       const currentTime = new Date();
       const ms = selectedDate.getTime() - currentTime.getTime();
       elements.days.textContent = addLeadingZero(convertMs(ms).days);
